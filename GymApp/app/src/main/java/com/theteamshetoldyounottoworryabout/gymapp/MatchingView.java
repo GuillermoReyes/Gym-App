@@ -21,12 +21,20 @@ public class MatchingView extends AppCompatActivity {
         //initialize textView fields,
 
 
+        //I think i found an issue here
+       // RequestLocation locationRequest = new RequestLocation();
 
-        RequestLocation locationRequest = new RequestLocation();
-        double m_location = locationRequest.getLattitude();
+
+        //double m_location = locationRequest.getLattitude();
         final TextView etLocation = (TextView) findViewById(R.id.etLocation);
-        String locationMessage = "here is the location, " + Double.toString(m_location);
+        String locationMessage = "here is the location, " ;
+        /*+ Double.toString(m_location);
+
+         */
+
         etLocation.setText(locationMessage);
+
+
 
 
 

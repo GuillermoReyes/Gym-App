@@ -43,8 +43,7 @@ public class RequestLocation extends FragmentActivity implements GoogleApiClient
     @Override
     public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
-
-
+        //setContentView(R.layout.activity_matching_view);
 
 
 
@@ -61,7 +60,7 @@ public class RequestLocation extends FragmentActivity implements GoogleApiClient
                 .build();
         //woah that was verbose !
         //location object request
-        //
+
         mLocationRequest  = LocationRequest.create()
                 .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
                 .setInterval(10*1000)     //10 seconds
@@ -83,7 +82,7 @@ public class RequestLocation extends FragmentActivity implements GoogleApiClient
     @Override
     protected void onPause() {
         super.onPause();
-        //stop requestimg location
+        //stop requesting location
         if(mGoogleApiClient.isConnected()){
             LocationServices.FusedLocationApi.removeLocationUpdates(mGoogleApiClient,this);
             mGoogleApiClient.disconnect();
@@ -166,6 +165,9 @@ public class RequestLocation extends FragmentActivity implements GoogleApiClient
             catch (IntentSender.SendIntentException e){
                 e.printStackTrace();
             }
+
+        }else{
+            Log.i(TAG,"Location services connection failed with code"+ connectionResult.getErrorCode());
         }
     }
 
