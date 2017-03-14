@@ -12,6 +12,8 @@ import android.widget.TextView;
  */
 public class MatchingView extends AppCompatActivity {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +24,10 @@ public class MatchingView extends AppCompatActivity {
 
 
         //I think i found an issue here
-       // RequestLocation locationRequest = new RequestLocation();
+       //RequestLocation locationRequest = new RequestLocation();
+
+        Intent location = new Intent(MatchingView.this, MapsActivity.class);
+        MatchingView.this.startActivity(location);
 
 
         //double m_location = locationRequest.getLattitude();
@@ -33,9 +38,6 @@ public class MatchingView extends AppCompatActivity {
          */
 
         etLocation.setText(locationMessage);
-
-
-
 
 
 

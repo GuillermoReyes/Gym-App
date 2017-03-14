@@ -29,6 +29,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
  * */
 //TODO add getters for this class
 
+//TODO: create an intent to call request location
 public class RequestLocation extends FragmentActivity implements GoogleApiClient.ConnectionCallbacks,
     GoogleApiClient.OnConnectionFailedListener, LocationListener{
 
@@ -38,6 +39,7 @@ public class RequestLocation extends FragmentActivity implements GoogleApiClient
     private GoogleMap mMap; //perhaps may be null ->would imply Google Play Services APK is not ava
     private GoogleApiClient mGoogleApiClient;
     private LocationRequest mLocationRequest;
+
     private Location m_Location;
 
     @Override
@@ -89,6 +91,7 @@ public class RequestLocation extends FragmentActivity implements GoogleApiClient
 
         }
     }
+
     private void setUpMapIfNeeded(){
         //we really don't need to display a map
         //we only need the location,
