@@ -28,8 +28,14 @@ public class MatchingView extends AppCompatActivity {
 
         Intent location = new Intent(MatchingView.this, MapsActivity.class);
         MatchingView.this.startActivity(location);
+        MapsActivity newActivity = new MapsActivity(); // this google maps object
+        // get Location
+        //Submit a query to SQL database for all users near us
+        // display an object of users.
 
 
+
+        //TODO: send location to SQL database.
         //double m_location = locationRequest.getLattitude();
         final TextView etLocation = (TextView) findViewById(R.id.etLocation);
         String locationMessage = "here is the location, " ;
